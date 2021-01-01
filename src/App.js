@@ -1,23 +1,34 @@
-import { DatePicker,  Button } from 'antd'
+import { DatePicker,  Button, Layout } from 'antd'
 import ReactPlayer from 'react-player/youtube'
+import Authentication from './containers/Authentication'
+
 
 function App() {
+  const { Header, Footer, Sider, Content } = Layout
+
   return (
     <div className="test">
+      <Header>
+        AUCTION
+      </Header>
+      <Content>
+        Контентная часть
+      </Content>
+      <Footer>
+        sdf
+      </Footer>
+      <Authentication />
       <ReactPlayer 
-        className=''
-        url='https://www.youtube.com/watch?v=Sl9ac5BJxfs' 
+        className='player'
+        url='https://www.youtube.com/watch?v=UVxyXzaCI34' 
         valume={0}
         muted={true}
-        width='100wh'
+        width='90wh'
         height='100vh'
-        // light={true}
         onReady={true}
         loop={true}
         playing={true}
       />
-      <Button type="primary">PRESS ME</Button>
-      <DatePicker />- аукцион
     </div>
   )
 }
