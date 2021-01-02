@@ -5,23 +5,6 @@
 
 body {}
 
-.player{
-  // opacity: 0.5;
-  position: fixed;
-  top:0;
-  left: 0px;
-  right: 0px;
-  bottom: 0;
-  z-index: -10;
-}
-
-.ant-layout-header{
-  height: 30vh;
-  background-color: hsla(247, 93%, 67%, 0.8);
-  color:azure;
-  z-index: 1;
-}
-
 .ant-layout-content{
   height: 50vh;
  // background-color: hsla(247, 93%, 67%, 0.8);
@@ -29,10 +12,8 @@ body {}
   z-index: 1;
 }
 
-.ant-layout-footer{
-  height: 20vh;
-  background-color: hsla(0, 0, 0, 0.3);
-  color: #fff;
-  z-index: 1;
+.space-align-container {
+  display: flex;
+  align-item: flex-start;
+  flex-wrap: wrap;
 }
-
