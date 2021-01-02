@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Form, Input, Button, Checkbox, Typography } from 'antd'
+import { Form, Input, Button, Typography } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
@@ -12,7 +12,7 @@ const Wrap = styled.div`
   border-radius: 8px;
   right: 8vw;
   top: 15vh;
-  z-index: 2;
+  z-index: 30;
 `
 
 const Link = styled.span`

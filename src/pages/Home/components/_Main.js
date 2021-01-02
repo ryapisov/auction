@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Carousel, Row, Col, Divider } from 'antd'
+import { Row, Col } from 'antd'
 
 const MainStyled = styled.div`
   height:100%;

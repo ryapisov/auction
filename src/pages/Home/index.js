@@ -7,10 +7,10 @@ import React from 'react'
 import styled from 'styled-components'
 import PlayerBackground from './components/_PlayerBackground'
 import { Layout } from 'antd'
-import _Header  from './containers/_Header'
-import _Footer  from './containers/_Footer'
-import _Content from './containers/_Content'
-import _Auth    from './containers/_Auth'
+import Header  from './containers/_Header'
+import Footer  from './containers/_Footer'
+import Content from './containers/_Content'
+import Auth    from './containers/_Auth'
 
 const LayoutStyled = styled(Layout)`
   min-height:100vh;
@@ -21,10 +21,10 @@ const Home = () => {
   return(
     <LayoutStyled>
       <PlayerBackground />
-      <_Auth />
-      <_Header />
-      <_Content />
-      <_Footer />
+      <Auth />
+      <Header />
+      <Content />
+      <Footer />
     </LayoutStyled>
   )
 }

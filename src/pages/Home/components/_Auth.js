@@ -13,7 +13,7 @@ const Wrap = styled.div`
   border-radius: 2px;
   right: 8vw;
   top: 15vh;
-  z-index: 2;
+  z-index: 30;
 `
 const Link = styled.span`
   color: rgb(18, 179, 24);
