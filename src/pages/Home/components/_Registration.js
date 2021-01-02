@@ -1,7 +1,37 @@
+import styled from 'styled-components'
 import { Form, Input, Button, Checkbox, Typography } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
+
+const Wrap = styled.div`
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px 33px 20px 33px;
+  position: fixed;
+  border: 1px solid #333;
+  border-radius: 8px;
+  right: 8vw;
+  top: 15vh;
+  z-index: 2;
+`
+
+const Link = styled.span`
+  color: rgb(18, 179, 24);
+  &:hover{
+    color: rgba(18, 179, 24, 0.5);
+    cursor: pointer;
+  }
+`
+const Btn = styled(Button)`
+  background-color: rgb(113, 97, 174);
+  border: 1px solid rgb(145, 142, 217);
+  color: rgb(255, 255, 255);
+  &:hover{
+    background-color: rgb(145, 142, 217);
+    border: 1px solid rgb(113, 97, 174);
+    color: rgb(255, 255, 255);
+  }
+` 
 
 const Registration = (props) => {
 
@@ -10,65 +40,62 @@ const Registration = (props) => {
   }
 
   return (
-    <div className="ant-form-auth">
-      <Title level={2}>Создание аккаунта</Title>
-    <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-    >
-      <Form.Item
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Username!',
-          },
-        ]}
+    <Wrap>
+      <Title level={2}>
+        Создание аккаунта
+      </Title>
+      <Form
+        name="normal_login"
+        className="login-form"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
       >
-        <Input 
-          size="large"
-          prefix={<UserOutlined className="site-form-item-icon" />} 
-          placeholder="Новый email или телефон" 
-        />
-      </Form.Item>
-      
-      <Form.Item
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Password!',
-          },
-        ]}
-      >
-        <Input
-          size="large"
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Придумайте пароль"
-        />
-      </Form.Item>
+        <Form.Item
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Username!',
+            },
+          ]}
+        >
+          <Input 
+            size="large"
+            prefix={<UserOutlined className="site-form-item-icon" />} 
+            placeholder="Новый email или телефон" 
+          />
+        </Form.Item>
+        
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Password!',
+            },
+          ]}
+        >
+          <Input
+            size="large"
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Придумайте пароль"
+          />
+        </Form.Item>
 
-      <Form.Item>
-        <Button 
-          type="primary" 
-          htmlType="submit" 
-          className="login-form-button ant-btn-purple"
-        >Создать аккаунт!
-        </Button>
-        &nbsp;или&nbsp; 
-        <span
-         className="login-form-new-user"
-         onClick={()=>props.onClick('auth')}
-        >войти в аккаунт
-        </span>
-      </Form.Item>
-    </Form>
-    </div>
+        <Form.Item>
+          <Btn htmlType="submit">
+            Создать аккаунт!
+          </Btn>
+          &nbsp;или&nbsp; 
+          <Link onClick={()=>props.onClick('auth')}>
+            войти в аккаунт
+          </Link>
+        </Form.Item>
+      </Form>
+    </Wrap>
   )
 }
 

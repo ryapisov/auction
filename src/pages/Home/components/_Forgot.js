@@ -1,86 +1,107 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Form, Input, Button, Checkbox, Typography } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
 
+const Wrap = styled.div`
+  background-color: rgba(255, 255, 255, .9);
+  padding: 40px 33px 20px 33px;
+  position: fixed;
+  border: 1px solid #333;
+  border-radius: 8px;
+  right: 8vw;
+  top: 15vh;
+  z-index: 2;
+`
+const Link = styled.span`
+  color: rgb(18, 179, 24);
+  &:hover{
+    color: rgba(18, 179, 24, 0.5);
+    cursor: pointer;
+  }
+`
+const Btn = styled(Button)`
+  background-color: rgb(113, 97, 174);
+  border: 1px solid rgb(145, 142, 217);
+  color: rgb(255, 255, 255);
+  &:hover{
+    background-color: rgb(145, 142, 217);
+    border: 1px solid rgb(113, 97, 174);
+    color: rgb(255, 255, 255);
+  }
+` 
+
 const Forgot = (props) => {
   const [isPhone, setIsPhone] = React.useState(false)
-
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
   }
 
   return (
-    <div className="ant-form-auth">
-      <Title level={2}>Восстановить пароль</Title>
-    
-    <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-    >
+    <Wrap>
+      <Title level={2}>
+        Восстановить пароль
+      </Title>
+      <Form
+        name="normal_login"
+        className="login-form"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
+      >
 
-    { isPhone ? 
-      <Form.Item
+      { isPhone ? 
+        <Form.Item
+          name={['user', 'email']}
+          rules={[
+            {
+              type: 'email',
+            },
+          ]}
+        >
+          <Input
+            size="large"
+            placeholder="+7 Введите номер телефона" 
+          />
+        </Form.Item>
+        :
+        <Form.Item
         name={['user', 'email']}
         rules={[
           {
             type: 'email',
           },
         ]}
-      >
+        > 
         <Input
           size="large"
-          placeholder="+7 Введите номер телефона" 
+          placeholder="Введите email" 
         />
-      </Form.Item>
-      :
-      <Form.Item
-      name={['user', 'email']}
-      rules={[
-        {
-          type: 'email',
-        },
-      ]}
-      > 
-      <Input
-        size="large"
-        placeholder="Введите email" 
-      />
-       </Form.Item>
+        </Form.Item>
+        }    
+      
+        <Form.Item>
+          или восстановить с помощью&nbsp;&nbsp;
+          <Link onClick={()=>setIsPhone(!isPhone)}>
+            {isPhone ? 'email' : 'телефона'} ? 
+          </Link>
+        </Form.Item>
 
-      }    
-     
-      <Form.Item>
-        или восстановить с помощью&nbsp;&nbsp;
-        <span 
-          className="login-form-forgot" 
-          onClick={()=>setIsPhone(!isPhone)}
-        >{isPhone ? 'email' : 'телефона'}? 
-        </span>
-      </Form.Item>
-
-      <Form.Item>
-        <Button 
-          type="primary" 
-          htmlType="submit" 
-          className="login-form-button ant-btn-purple"
-        >Отправить
-        </Button>
-        &nbsp;&nbsp;или&nbsp;&nbsp;
-        <span 
-          className="login-form-new-user"
-          onClick={()=>props.onClick('auth')}
-        >вернуться назад
-        </span>
-      </Form.Item>
-    </Form>
-    </div>
+        <Form.Item>
+          <Btn htmlType="submit">
+            Отправить
+          </Btn>
+          &nbsp;&nbsp;или&nbsp;&nbsp;
+          <Link onClick={()=>props.onClick('auth')}>
+            вернуться назад
+          </Link>
+        </Form.Item>
+      </Form>
+    </Wrap>
   )
 }
 

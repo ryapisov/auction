@@ -8,9 +8,9 @@ const { Content } = Layout
 
 const ContentStyle = styled(Content)`
   height: 50vh;
- // background-color: hsla(247, 93%, 67%, 0.8);
+//  background-color: rgba(247, 93%, 67%, 0.4);
   color:#fff;
-  z-index: 1;
+  z-index: 10;
 `
 const _Content = () => {
   return(
