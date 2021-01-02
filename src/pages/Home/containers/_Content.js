@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Layout } from 'antd'
+import _About from '../components/_About'
+import _Job from '../components/_Job'
+import _Main from '../components/_Main'
 const { Content } = Layout
 
 const ContentStyle = styled(Content)`
@@ -12,7 +15,9 @@ const ContentStyle = styled(Content)`
 const _Content = () => {
   return(
     <ContentStyle>
-      content
+      {/* <_Main /> */}
+      {/* <_Job />
+      <_About/> */}
     </ContentStyle>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import Auth from '../components/Auth'
-import Registration from '../components/Registration'
-import Forgot from '../components/Forgot'
+import Auth from '../components/_Auth'
+import Registration from '../components/_Registration'
+import Forgot from '../components/_Forgot'
 
-const Authentication = () => {
+const _Auth = () => {
   const [check, setCheck] = React.useState('auth')
 
   const switchHandler = (key) => {
@@ -19,4 +19,4 @@ const Authentication = () => {
   )
 }
 
-export default Authentication
+export default _Auth

@@ -6,7 +6,6 @@ const { Title } = Typography
 
 const Auth = (props) => {
 
-
   const [check, setCheck] = React.useState('email');
 
   const onFinish = (values) => {
@@ -124,7 +123,7 @@ const Auth = (props) => {
         <span 
           className="login-form-new-user"
           onClick={()=>props.onClick('newuser')}
-        >Регистрация
+        >регистрация
         </span>
       </Form.Item>
     </Form>

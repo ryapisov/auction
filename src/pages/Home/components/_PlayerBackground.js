@@ -26,7 +26,7 @@ const ReactPlayerStyled = styled(ReactPlayer)`
   z-index: -2;
 `
 
-const PlayerBackground = () => {
+const _PlayerBackground = () => {
   return(
     <>
       <FilterBackgroundStyled />
@@ -43,4 +43,4 @@ const PlayerBackground = () => {
   )
 }
 
-export default PlayerBackground
+export default _PlayerBackground

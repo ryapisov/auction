@@ -5,7 +5,7 @@ const { Header } = Layout
 
 const HeaderStyle = styled(Header)`
   height: 30vh;
-  background-color: hsla(247, 93%, 67%, 1);
+  background-color: hsla(247, 93%, 67%, 1.0);
   color: #fff;
   z-index: 1;
 `
