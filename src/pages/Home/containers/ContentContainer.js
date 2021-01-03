@@ -8,11 +8,11 @@ const { Content } = Layout
 
 const ContentStyle = styled(Content)`
   height: 50vh;
-//  background-color: rgba(247, 93%, 67%, 0.4);
+// background-color: rgba(247, 93%, 67%, 0.4);
   color:#fff;
   z-index: 10;
 `
-const _Content = () => {
+const ContentContainer = () => {
   return(
     <ContentStyle>
       {/* <_Main /> */}
@@ -22,4 +22,4 @@ const _Content = () => {
   )
 }
 
-export default _Content
+export default ContentContainer

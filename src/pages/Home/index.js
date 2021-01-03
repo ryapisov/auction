@@ -1,16 +1,11 @@
-/**
- * PAGE HOME
- * 
-*/
-
 import React from 'react'
 import styled from 'styled-components'
 import PlayerBackground from './components/_PlayerBackground'
 import { Layout } from 'antd'
-import Header  from './containers/_Header'
-import Footer  from './containers/_Footer'
-import Content from './containers/_Content'
-import Auth    from './containers/_Auth'
+import Header  from './containers/HeaderContainer'
+import Footer  from './containers/FooterContainer'
+import Content from './containers/ContentContainer'
+import Auth    from './containers/AuthContainer'
 
 const LayoutStyled = styled(Layout)`
   min-height:100vh;

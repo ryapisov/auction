@@ -33,7 +33,7 @@ const P = styled.p`
   margin-left:1.4rem;
 `
 
-const _Footer = () => {
+const FooterContainer = () => {
   return(
     <FooterStyle>
       <Row justify="space-around">
@@ -60,4 +60,4 @@ const _Footer = () => {
   )
 }
 
-export default _Footer
+export default FooterContainer
