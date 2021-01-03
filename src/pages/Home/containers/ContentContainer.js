@@ -1,24 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Layout } from 'antd'
-// import _About from '../components/_About'
-// import _Job from '../components/_Job'
-// import _Main from '../components/_Main'
-const { Content } = Layout
+import About from '../components/_About'
+import Job from '../components/_Job'
+import { PageContext } from '../Context'
 
-const ContentStyle = styled(Content)`
+const Content = styled(Layout.Content)`
   height: 50vh;
-// background-color: rgba(247, 93%, 67%, 0.4);
+  // background-color: rgba(247, 93%, 67%, 0.4);
   color:#fff;
   z-index: 10;
 `
+
 const ContentContainer = () => {
+  const { page } = React.useContext(PageContext)
+
   return(
-    <ContentStyle>
-      {/* <_Main /> */}
-      {/* <_Job />
-      <_About/> */}
-    </ContentStyle>
+    <Content>
+      { page === 'about' && <About/> }
+      { page === 'job' && <Job /> }
+    </Content>
   )
 }
 

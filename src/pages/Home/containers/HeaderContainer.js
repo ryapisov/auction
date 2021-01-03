@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Layout, Space, Row, Col, Typography } from 'antd'
+import { PageContext } from '../Context'
 
 const Header= styled(Layout.Header)`
   height: 30vh;
@@ -22,11 +23,13 @@ const SpaceItem = styled.span`
 const Title = styled(Typography)`
   text-align: center;
   margin-top: 15px;
-  font-size: 38px;
+  font-size: 48px;
   font-weight:600;
   color: #fff;
 `
 const HeaderContainer = () => {
+  const { menu, toPage } = React.useContext(PageContext) 
+
   return(
     <Header>
       <Row style={{height:'15vh'}} justify="center" align="bottom">
@@ -38,11 +41,9 @@ const HeaderContainer = () => {
       <Row style={{height:'15vh'}} justify="left" align="bottom">
         <Col span={18} style={{marginBottom:'-10px'}}>
           <Space>
-            <SpaceItem onClick={()=>alert(1)}>аукцион</SpaceItem>
-            <SpaceItem onClick={()=>alert(2)}>товары</SpaceItem>
-            <SpaceItem onClick={()=>alert(3)}>карьера</SpaceItem>
-            <SpaceItem onClick={()=>alert(4)}>заработок</SpaceItem>
-            <SpaceItem onClick={()=>alert(5)}>демо&nbsp;аккаунт</SpaceItem>
+            {menu.map((m, id)=>
+              <SpaceItem key={id} onClick={()=>toPage(m.link)}>{m.value}</SpaceItem>
+            )}
           </Space>
         </Col>
       </Row>
