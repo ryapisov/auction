@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 const Wrap = styled.div`
   height: 100%;
-  background: #333;
+  background: green;
 `
 
-const _About = () => {
+const _Job = () => {
   return (
     <Wrap>
-      ABOUT
+      Карьера для начинающих
     </Wrap>
   )
 }
 
-export default _About
+export default _Job

@@ -5,16 +5,6 @@ import { UserOutlined, MailOutlined, PhoneOutlined, LockOutlined } from '@ant-de
 
 const { Title } = Typography
 
-const Wrap = styled.div`
-  background: rgba(255, 255, 255, .9);
-  padding: 40px 33px 20px 33px;
-  position: fixed;
-  border: 1px solid #333;
-  border-radius: 2px;
-  right: 8vw;
-  top: 15vh;
-  z-index: 30;
-`
 const Link = styled.span`
   color: rgb(18, 179, 24);
   &:hover{
@@ -46,7 +36,7 @@ const Auth = (props) => {
   }
 
   return (
-    <Wrap>
+    <>
       <Title level={2}>
         Вход в аккаунт
       </Title>
@@ -154,7 +144,7 @@ const Auth = (props) => {
           </Link>
         </Form.Item>
       </Form>
-    </Wrap>
+    </>
   )
 }
 

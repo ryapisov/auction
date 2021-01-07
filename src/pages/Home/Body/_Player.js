@@ -1,12 +1,8 @@
-/**
- * COMPONENT ReactPlayer
- * 
-*/
-
+import React from 'react'
 import ReactPlayer from 'react-player/youtube'
 import styled from 'styled-components'
 
-const FilterBackgroundStyled = styled.div`
+const FilterBackground = styled.div`
   position: fixed;
   top:0;
   left: 0px;
@@ -17,7 +13,7 @@ const FilterBackgroundStyled = styled.div`
   z-index: -1;
 `
 
-const ReactPlayerStyled = styled(ReactPlayer)`
+const Player = styled(ReactPlayer)`
   position: fixed;
   top:0;
   left: 0px;
@@ -26,11 +22,11 @@ const ReactPlayerStyled = styled(ReactPlayer)`
   z-index: -2;
 `
 
-const _PlayerBackground = () => {
+const _Player = () => {
   return(
     <>
-      <FilterBackgroundStyled />
-      <ReactPlayerStyled
+      <FilterBackground />
+      <Player
         url='https://www.youtube.com/watch?v=UVxyXzaCI34' 
         valume={0}
         muted={true}
@@ -43,4 +39,4 @@ const _PlayerBackground = () => {
   )
 }
 
-export default _PlayerBackground
+export default _Player

@@ -4,17 +4,6 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
 
-const Wrap = styled.div`
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px 33px 20px 33px;
-  position: fixed;
-  border: 1px solid #333;
-  border-radius: 8px;
-  right: 8vw;
-  top: 15vh;
-  z-index: 30;
-`
-
 const Link = styled.span`
   color: rgb(18, 179, 24);
   &:hover{
@@ -22,6 +11,7 @@ const Link = styled.span`
     cursor: pointer;
   }
 `
+
 const Btn = styled(Button)`
   background-color: rgb(113, 97, 174);
   border: 1px solid rgb(145, 142, 217);
@@ -31,16 +21,15 @@ const Btn = styled(Button)`
     border: 1px solid rgb(113, 97, 174);
     color: rgb(255, 255, 255);
   }
-` 
+`
 
 const Registration = (props) => {
-
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
   }
 
   return (
-    <Wrap>
+    <>
       <Title level={2}>
         Создание аккаунта
       </Title>
@@ -95,7 +84,7 @@ const Registration = (props) => {
           </Link>
         </Form.Item>
       </Form>
-    </Wrap>
+    </>
   )
 }
 

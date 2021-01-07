@@ -4,16 +4,6 @@ import { Form, Input, Button, Typography } from 'antd'
 
 const { Title } = Typography
 
-const Wrap = styled.div`
-  background-color: rgba(255, 255, 255, .9);
-  padding: 40px 33px 20px 33px;
-  position: fixed;
-  border: 1px solid #333;
-  border-radius: 8px;
-  right: 8vw;
-  top: 15vh;
-  z-index: 30;
-`
 const Link = styled.span`
   color: rgb(18, 179, 24);
   &:hover{
@@ -21,6 +11,7 @@ const Link = styled.span`
     cursor: pointer;
   }
 `
+
 const Btn = styled(Button)`
   background-color: rgb(113, 97, 174);
   border: 1px solid rgb(145, 142, 217);
@@ -30,7 +21,7 @@ const Btn = styled(Button)`
     border: 1px solid rgb(113, 97, 174);
     color: rgb(255, 255, 255);
   }
-` 
+`
 
 const Forgot = (props) => {
   const [isPhone, setIsPhone] = React.useState(false)
@@ -40,7 +31,7 @@ const Forgot = (props) => {
   }
 
   return (
-    <Wrap>
+    <>
       <Title level={2}>
         Восстановить пароль
       </Title>
@@ -100,7 +91,7 @@ const Forgot = (props) => {
           </Link>
         </Form.Item>
       </Form>
-    </Wrap>
+    </>
   )
 }
 
