@@ -21,6 +21,7 @@ const Home = () => {
         {name:'Главная', id:'player'},
         {name:'Об аукционе', id:'about'},
         {name:'Карьера', id:'job'},
+        {name:'Продукты', id:'products'}
       ],
       setContent:(name)=>setContent(name)
     },

@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrap = styled.div`
-  height: 100%;
-  background: green;
+  height:100%;
+  background:#FFE4B5;
 `
 
 const _Job = () => {
   return (
     <Wrap>
-      Карьера для начинающих
+      Карьера
     </Wrap>
   )
 }

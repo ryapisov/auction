@@ -13,7 +13,7 @@ const Title = () => {
   return (
     <Row justify="center" align="bottom" style={{color:'#fff', height:'40%'}}>
       <Col span={8}>
-        <div style={{textAlign:'center', height:'30px', fontSize:'2.2rem'}}>
+        <div style={{textAlign:'center', height:'30px', fontSize:'2.5rem', fontWeight:600}}>
           Аукцион
         </div>
       </Col>
@@ -28,7 +28,7 @@ const Menu = ({header}) => {
   }
 
   return(
-    <Row justify="start" align="bottom" style={{color:'#fff', height:'60%'}}>
+    <Row justify="start" align="bottom" style={{color:'#fff', height:'60%', marginLeft:'40px'}}>
       {header.menu.map((item, i)=> 
         <Col key={i} span={3} style={style} onClick={()=>header.setContent(item.id)}>{item.name}</Col> 
       )}
